@@ -4,21 +4,25 @@ extrato = []
 
 os.system('cls')
 renda_atual = float(input("DIGITE SUA RENDA ATUAL: "))
+extrato.append(renda_atual)
 
 while True:
-    boool = str(input("DIGITE 1 SE QUER ADICIONAR, DIGITE 2 SE QUE TIRAR, DIGITE 3 SE QUER VER EXTRATO: "))
+    
+    boool = str(input("DIGITE 1 SE QUER ADICIONAR, DIGITE 2 SE QUE TIRAR, DIGITE 3 SE QUER VER O EXTRATO, DIGITE 4 PARA FINALIZAR: "))
     if boool == "1":
-        add = float(input("DIGITE QUANTO:  "))
+        add = float(input("DIGITE QUANTO: "))
+        how = str(input("FOI DE QUEM?: "))
         renda_atual = renda_atual + add
-        extrato.append(renda_atual)
+        extrato.append(f"{renda_atual} + {add}, de {how}")
         
         os.system('cls')
         print("sua renda atual é", renda_atual)        
 
     if boool == "2":
         add = float(input("DIGITE QUANTO: "))
+        how = str(input("É PARA QUEM?: "))
         renda_atual = renda_atual - add
-        extrato.append(renda_atual)
+        extrato.append(f"{renda_atual} + {add}, para {how}")
         
         os.system('cls')
         print("sua renda atual é", renda_atual)
@@ -26,7 +30,6 @@ while True:
     if boool == "3":
         print(extrato)
         
-    
-    
-    if boool == "fim":
+    if boool == "4":
+        os.system('cls')
         break
